@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuItem from '../menu-item/menu-item.component';
 
-
+import './directory-menu.styles.scss'
 
 class DirectoryMenu extends React.Component  {
 
@@ -14,36 +14,32 @@ class DirectoryMenu extends React.Component  {
                 title: 'Tortas',
                 imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
                 id: 1,
-                linkUrl: 'shop/hats'
+                linkUrl: 'tortas'
               },
               {
                 title: 'Tortas frías',
                 imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
                 id: 2,
-                linkUrl: 'shop/jackets'
+                linkUrl: ''
               },
               {
                 title: 'Besitos de coco',
                 imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-                size: 'large',
-                id: 5,
-                linkUrl: 'shop/mens'
+                id: 3,
+                linkUrl: ''
               },
               {
                 title: 'Cup cakes',
                 imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-                size: 'large',
-                id: 5,
-                linkUrl: 'shop/mens'
+                id: 4,
+                linkUrl: ''
               },
               {
                 title: 'Chesse cakes',
                 imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-                size: 'large',
                 id: 5,
-                linkUrl: 'shop/mens'
-              },
-            
+                linkUrl: ''
+              },      
             ]
         }   
     
@@ -53,8 +49,8 @@ class DirectoryMenu extends React.Component  {
 
     return (
     <div className= 'directory-menu'>
-    {this.state.products.map (({ title, imageUrl, id}) => (
-        <MenuItem key = {id} title = {title} imageUrl = {imageUrl}/>
+    { this.state.products.map (({id, ...otherSectionPropos}) => (
+        <MenuItem key = {id} {...otherSectionPropos}/>
     ))}
     </div>
     );
